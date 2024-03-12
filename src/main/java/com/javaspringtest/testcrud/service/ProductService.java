@@ -15,6 +15,7 @@ public class ProductService {
     }
 
     public ProductEntity getProductById(int id){
+
         return repository.findById(id).orElse(null);
     }
 

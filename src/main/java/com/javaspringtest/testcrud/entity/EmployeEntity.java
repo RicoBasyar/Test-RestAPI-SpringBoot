@@ -12,13 +12,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name='EMPLOYEENTITY')
+@Table(name="EMPLOYE_ENTITY")
 public class EmployeEntity {
 
     @Id
     @GeneratedValue
-    private int employe_id;
-    private String employe_name;
-    private double employe_salary;
+    private int employeid;
+    private String employename;
+    private double employesalary;
 
 }
