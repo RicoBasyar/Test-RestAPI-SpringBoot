@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "PRODUCT")
-public class Product {
+public class ProductEntity {
 
     @Id
     @GeneratedValue

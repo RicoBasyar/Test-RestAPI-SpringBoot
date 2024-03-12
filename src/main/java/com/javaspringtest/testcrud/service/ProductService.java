@@ -1,6 +1,6 @@
 package com.javaspringtest.testcrud.service;
 
-import com.javaspringtest.testcrud.entity.Product;
+import com.javaspringtest.testcrud.entity.ProductEntity;
 import com.javaspringtest.testcrud.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,15 +10,15 @@ public class ProductService {
     @Autowired
     private ProductRepository repository;
 
-    public Product saveProduct(Product product){
-        return repository.save(product);
+    public ProductEntity saveProduct(ProductEntity productEntity){
+        return repository.save(productEntity);
     }
 
-    public Product getProductById(int id){
+    public ProductEntity getProductById(int id){
         return repository.findById(id).orElse(null);
     }
 
-    public Product getProductByName(String name){
+    public ProductEntity getProductByName(String name){
         return repository.findByProductName(name);
     }
 
@@ -27,11 +27,11 @@ public class ProductService {
         return "Data with id = "+id+" has been deleted";
     }
 
-    public Product updateProduct(Product product){
-        Product existingProduct = repository.findById(product.getId()).orElse(null);
-        existingProduct.setProductName(product.getProductName());
-        existingProduct.setQuantity(product.getQuantity());
-        existingProduct.setPrice(product.getPrice());
-        return repository.save(existingProduct);
+    public ProductEntity updateProduct(ProductEntity productEntity){
+        ProductEntity existingProductEntity = repository.findById(productEntity.getId()).orElse(null);
+        existingProductEntity.setProductName(productEntity.getProductName());
+        existingProductEntity.setQuantity(productEntity.getQuantity());
+        existingProductEntity.setPrice(productEntity.getPrice());
+        return repository.save(existingProductEntity);
     }
 }
