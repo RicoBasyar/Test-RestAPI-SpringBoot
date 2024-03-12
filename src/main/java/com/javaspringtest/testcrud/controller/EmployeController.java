@@ -16,7 +16,7 @@ public class EmployeController {
         return service.saveEmploye(employe);
     }
 
-    @GetMapping("/getproductbyid/{id}")
+    @GetMapping("/getemployebyid/{id}")
     public EmployeEntity getEmployeByID(@PathVariable int id){
         return service.getEmployeById(id);
     }
