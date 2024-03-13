@@ -30,4 +30,9 @@ public class StudentService {
         ExistingStudentEntity.setStudentYear(student.getStudentYear());
         return repository.save(ExistingStudentEntity);
     }
+
+    public String deleteStudentbyID(int id){
+        repository.deleteById(id);
+        return "Student Data Has Been Deleted";
+    }
 }

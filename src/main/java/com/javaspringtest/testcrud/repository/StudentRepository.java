@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 public interface StudentRepository extends JpaRepository<StudentEntity, Integer> {
-    @Query("SELECT e FROM StudentEntity e where e.StudentName = :StudentName")
+    @Query("SELECT e FROM StudentEntity e where e.StudentName = :name")
     StudentEntity findByName(String name);
 }
